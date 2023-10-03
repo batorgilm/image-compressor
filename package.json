@@ -1,0 +1,17 @@
+{
+  "name": "jpg-to-webp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node download-img.js && node resize.js",
+    "resize": "node resize.js"
+  },
+  "dependencies": {
+    "airtable": "^0.12.1",
+    "axios": "^1.4.0",
+    "image-size": "^1.0.2",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.32.1"
+  }
+}

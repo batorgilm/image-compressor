@@ -1,0 +1,1 @@
+- npm sharp that is resize to jpg to webp converter module 
