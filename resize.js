@@ -1,12 +1,12 @@
-const fs = require("fs");
-const sharp = require("sharp");
-const sizeOf = require("image-size");
+const fs = require('fs');
+const sharp = require('sharp');
+const sizeOf = require('image-size');
 
-const testFolder = "./temp/";
+const testFolder = './temp/';
 
 async function resize() {
   fs.readdirSync(testFolder).forEach(async (file) => {
-    if (file.split(".")[1] === "jpg") {
+    if (file.split('.')[1] === 'jpg') {
       try {
         const dim = sizeOf(`./temp/${file}`);
 
@@ -14,7 +14,7 @@ async function resize() {
         const desiredHeight = Math.ceil(dim.height / 6);
 
         await sharp(`./temp/${file}`, { limitInputPixels: false })
-          .resize(desiredWidth, desiredHeight, { position: "top" })
+          .resize(desiredWidth, desiredHeight, { position: 'top' })
           .webp({ quality: 80 })
           .toFile(`./output/${file}.jpg`);
 
